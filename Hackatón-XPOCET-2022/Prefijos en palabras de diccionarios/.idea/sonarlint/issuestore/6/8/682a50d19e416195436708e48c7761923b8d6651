@@ -1,0 +1,5 @@
+
+;	cpp:S5421"!Global variables should be const.(êâµåüÿÿÿÿ
+4	cpp:S4962"Use the "nullptr" literal.(´ïêıÿÿÿÿ
+D	cpp:S5820"/Convert this integer literal to a bool literal.(†ëúš
+d	cpp:S5566"CChange this raw for-loop to a range for-loop or an "std::for_each".(°‘ÂĞüÿÿÿÿ8¾æßøü0

@@ -1,0 +1,3 @@
+D:/Projects/HackerRank/Hackatón-XPOCET-2022/Aminoacidos/cmake-build-debug/CMakeFiles/Aminoacidos.dir
+D:/Projects/HackerRank/Hackatón-XPOCET-2022/Aminoacidos/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Projects/HackerRank/Hackatón-XPOCET-2022/Aminoacidos/cmake-build-debug/CMakeFiles/rebuild_cache.dir
