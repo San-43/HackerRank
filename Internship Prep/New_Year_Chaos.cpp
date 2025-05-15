@@ -13,11 +13,26 @@ vector<string> split(const string &);
  */
 
 void minimumBribes(vector<int> q) {
-
+    int ans = 0;
+    for (int i = q.size(); i >= 1; i--) {
+        int k = i;
+        while (q[k-1] != i)
+            k--;
+        if (i - k > 2) {
+            cout << "Too chaotic\n";
+            return;
+        } else {
+            while (k != i) {
+                swap(q[k - 1], q[k]);
+                k++;
+                ans++;
+            }
+        }
+    }
+    cout << ans << '\n';
 }
 
-int main()
-{
+int main() {
     string t_temp;
     getline(cin, t_temp);
 
@@ -53,8 +68,7 @@ string ltrim(const string &str) {
 
     s.erase(
         s.begin(),
-        find_if(s.begin(), s.end(), not1(ptr_fun<int, int>(isspace)))
-    );
+        find_if(s.begin(), s.end(), not1(ptr_fun<int, int>(isspace))));
 
     return s;
 }
@@ -64,8 +78,7 @@ string rtrim(const string &str) {
 
     s.erase(
         find_if(s.rbegin(), s.rend(), not1(ptr_fun<int, int>(isspace))).base(),
-        s.end()
-    );
+        s.end());
 
     return s;
 }
