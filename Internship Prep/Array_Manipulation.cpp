@@ -16,26 +16,25 @@ vector<string> split(const string &);
  */
 
 long arrayManipulation(int n, vector<vector<int>> queries) {
-    vector<long long> v(n+1, 0);
+    vector<long long> v(n + 1, 0);
     long long sum = 0;
     long long ans = LLONG_MIN;
-    for(int i = 0; i < queries.size(); i++) {
+    for (int i = 0; i < queries.size(); i++) {
         int a = queries[i][0];
         int k = queries[i][2];
         v[a] += k;
-        if(queries[i][1] < n)
-            v[queries[i][1]+1] -= k;
+        if (queries[i][1] < n)
+            v[queries[i][1] + 1] -= k;
     }
 
-    for(int i = 1; i<= n; i++) {
+    for (int i = 1; i <= n; i++) {
         sum += v[i];
         ans = max(ans, sum);
     }
     return ans;
 }
 
-int main()
-{
+int main() {
     ofstream fout(getenv("OUTPUT_PATH"));
 
     string first_multiple_input_temp;
@@ -78,8 +77,7 @@ string ltrim(const string &str) {
 
     s.erase(
         s.begin(),
-        find_if(s.begin(), s.end(), not1(ptr_fun<int, int>(isspace)))
-    );
+        find_if(s.begin(), s.end(), not1(ptr_fun<int, int>(isspace))));
 
     return s;
 }
@@ -89,8 +87,7 @@ string rtrim(const string &str) {
 
     s.erase(
         find_if(s.rbegin(), s.rend(), not1(ptr_fun<int, int>(isspace))).base(),
-        s.end()
-    );
+        s.end());
 
     return s;
 }

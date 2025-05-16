@@ -9,11 +9,25 @@ vector<string> split(const string &);
 // Complete the countTriplets function below.
 long countTriplets(vector<long> arr, long r) {
 
+    unordered_map<long, long> r2;
+    unordered_map<long, long> r3;
+    long ans = 0;
 
+    for (long v : arr) {
+        if (r3.count(v)) {
+            ans += r3[v];
+        }
+
+        if (r2.count(v)) {
+            r3[v * r] += r2[v];
+        }
+
+        r2[v * r]++;
+    }
+    return ans;
 }
 
-int main()
-{
+int main() {
     ofstream fout(getenv("OUTPUT_PATH"));
 
     string nr_temp;
@@ -52,8 +66,7 @@ string ltrim(const string &str) {
 
     s.erase(
         s.begin(),
-        find_if(s.begin(), s.end(), not1(ptr_fun<int, int>(isspace)))
-    );
+        find_if(s.begin(), s.end(), not1(ptr_fun<int, int>(isspace))));
 
     return s;
 }
@@ -63,8 +76,7 @@ string rtrim(const string &str) {
 
     s.erase(
         find_if(s.rbegin(), s.rend(), not1(ptr_fun<int, int>(isspace))).base(),
-        s.end()
-    );
+        s.end());
 
     return s;
 }
